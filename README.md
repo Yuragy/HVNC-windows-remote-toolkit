@@ -2,7 +2,7 @@
 	•	server – the server-side component
 	•	client – the client-side component
 
-Each new connection is opened in a separate console.
+❗Each new connection is opened in a separate console.
 
 ## Supported commands
 	•	CMD_START_EXPLORER – launches Windows Explorer (explorer.exe)
