@@ -45,3 +45,4 @@ WMI check and cleanup:
 - Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
   Where-Object { $_.Consumer -match 'Microsoft_Win32Consumer' } |
   Format-List Filter, Consumer
+This is a training material demonstrating capabilities, the responsibility to use it lies with you. 
