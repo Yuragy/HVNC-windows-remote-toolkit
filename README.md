@@ -38,6 +38,7 @@ WMI check and cleanup:
   ForEach-Object { $_.Delete() }
 -  Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
   Where-Object { $_.Consumer -match 'Microsoft_Win32Consumer' } |
+#**This is a training material demonstrating capabilities, the responsibility to use it lies with you.** 
   ForEach-Object { $_.Delete() }
 
 # Verification:
