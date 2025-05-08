@@ -32,15 +32,15 @@ Each new connection is opened in a separate console.
 WMI check and cleanup:
  - Cleanup:
 
-Get-WmiObject -Namespace root\subscription -Class __EventFilter -Filter "Name='Microsoft_Win32Filter'" |
+• Get-WmiObject -Namespace root\subscription -Class __EventFilter -Filter "Name='Microsoft_Win32Filter'" |
   ForEach-Object { $_.Delete() }
-Get-WmiObject -Namespace root\subscription -Class CommandLineEventConsumer -Filter "Name='Microsoft_Win32Consumer'" |
+• Get-WmiObject -Namespace root\subscription -Class CommandLineEventConsumer -Filter "Name='Microsoft_Win32Consumer'" |
   ForEach-Object { $_.Delete() }
-Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
+• Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
   Where-Object { $_.Consumer -match 'Microsoft_Win32Consumer' } |
   ForEach-Object { $_.Delete() }
 
  - Verification:
-Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
+• Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
   Where-Object { $_.Consumer -match 'Microsoft_Win32Consumer' } |
   Format-List Filter, Consumer
