@@ -46,4 +46,8 @@
 
 
   
-⚠️ This is a training material demonstrating capabilities, the responsibility to use it lies with you. 
+## 🚫 Disclaimer
+
+This repository is provided for **educational purposes only** and intended for **authorized security research**.
+Use of these materials in unauthorized or illegal activities is **strictly prohibited**.
+
