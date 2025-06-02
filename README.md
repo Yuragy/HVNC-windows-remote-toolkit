@@ -29,8 +29,8 @@
 ## Test
 	•	Use client/clean.ps1 to remove all artifacts created by the client (the copied build, its folder, and any auto-start triggers).
 
-‼️ WMI check and cleanup:
-# Cleanup:
+#‼️ WMI check and cleanup:
+### Cleanup:
 
 -  Get-WmiObject -Namespace root\subscription -Class __EventFilter -Filter "Name='Microsoft_Win32Filter'" |
   ForEach-Object { $_.Delete() }
@@ -39,14 +39,14 @@
 -  Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
   Where-Object { $_.Consumer -match 'Microsoft_Win32Consumer' } | ForEach-Object { $_.Delete() }
 
-# Verification:
+### Verification:
 - Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding |
   Where-Object { $_.Consumer -match 'Microsoft_Win32Consumer' } |
   Format-List Filter, Consumer
 
 
   
-## 🚫 Disclaimer
+# 🚫 Disclaimer
 
 This repository is provided for **educational purposes only** and intended for **authorized security research**.
 Use of these materials in unauthorized or illegal activities is **strictly prohibited**.
