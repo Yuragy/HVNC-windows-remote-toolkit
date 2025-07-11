@@ -1,11 +1,11 @@
-# 🕶️ Headless VNC (HVNC) Toolkit
+# Headless VNC (HVNC) Toolkit
 
 > A **stealth-first** remote-administration framework that spins up an **invisible Windows desktop** in memory and lets you drive it like a regular VNC session—only without the tell-tale screen flicker or user-side pop-ups.  
 > Built for red-team operators who need *eyes-on-glass* access with the subtlety of a ghost.
 
 ---
 
-## 🗂️ Repository Layout
+## Repository Layout
 
 | Path     | Role | Notes |
 |----------|------|-------|
@@ -16,7 +16,7 @@
 
 ---
 
-## 📜 Supported Commands
+## Supported Commands
 
 | Constant | Action |
 |----------|--------|
@@ -38,7 +38,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Server**
 
@@ -71,7 +71,7 @@
 
 ---
 
-## 🧪 Testing & Cleanup
+## Testing & Cleanup
 
 Need a sterile host after the demo? Use the included PowerShell helper:
 
@@ -104,7 +104,7 @@ Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding `
 
 ---
 
-## 🔍 Why HVNC?
+## Why HVNC?
 
 *Traditional* VNC mirrors the *user’s* active desktop—any mouse wiggle or window pop-up is visible. **Headless VNC** instead:
 
@@ -117,7 +117,7 @@ In short: you get a **full UI foothold** with the stealth of a backdoor shell.
 
 ---
 
-## 🛡️ OPSEC Highlights
+## OPSEC Highlights
 
 * **Console-per-session** → easy kill-switch & minimal cross-noise.
 * **Auto-persistence** adapts to privilege level (WMI vs. registry).
