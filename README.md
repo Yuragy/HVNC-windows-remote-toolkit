@@ -1,6 +1,6 @@
 # Headless VNC (HVNC) Toolkit
 
-> A **stealth-first** remote-administration framework that spins up an **invisible Windows desktop** in memory and lets you drive it like a regular VNC session—only without the tell-tale screen flicker or user-side pop-ups.  
+> A **stealth-first** remote-administration framework that spins up an invisible Windows desktop in memory and lets you drive it like a regular VNC session—only without the tell-tale screen flicker or user-side pop-ups.  
 > Built for red-team operators who need *eyes-on-glass* access with the subtlety of a ghost.
 
 ---
@@ -20,8 +20,8 @@
 
 | Constant | Action |
 |----------|--------|
-| `CMD_START_EXPLORER`     | Launch **Windows Explorer** (`explorer.exe`) |
-| `CMD_START_RUN`          | Open the classic **Run / cmd prompt** (`cmd.exe`) |
+| `CMD_START_EXPLORER`     | Launch **Windows Explorer** explorer.exe |
+| `CMD_START_RUN`          | Open the classic **Run / cmd prompt** cmd.exe |
 | `CMD_START_CHROME`       | Launch **Google Chrome** |
 | `CMD_START_EDGE`         | Launch **Microsoft Edge** |
 | `CMD_START_BRAVE`        | Launch **Brave** |
@@ -33,8 +33,8 @@
 | `CMD_FILE_LIST`          | Enumerate **files / folders** in a directory |
 | `CMD_FILE_DOWNLOAD`      | **Download** a file from the remote box |
 | `CMD_FILE_UPLOAD`        | **Upload** a file to the remote box |
-| `CMD_KEYLOGGER_START`    | Start **key-logging** |
-| `CMD_KEYLOGGER_STOP`     | Stop key-logging |
+| `CMD_KEYLOGGER_START`    | Start keylogging |
+| `CMD_KEYLOGGER_STOP`     | Stop keylogging |
 
 ---
 
@@ -45,7 +45,7 @@
    ```
    cd server
    python server.py
-   # 🖥️ The script will prompt for a **listening port** — use the same port as the client build.
+   The script will prompt for a **listening port** — use the same port as the client build.
    ```
 
 2. **Client**
@@ -66,8 +66,8 @@
 
    and auto-starts at logon:
 
-   * **Admin** → WMI subscription
-   * **Standard user** → `Run` registry key
+   * Admin → WMI subscription
+   * Standard user → Run registry key
 
 ---
 
@@ -106,10 +106,10 @@ Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding `
 
 ## Why HVNC?
 
-*Traditional* VNC mirrors the *user’s* active desktop—any mouse wiggle or window pop-up is visible. Headless VNC instead:
+Traditional VNC mirrors the users active desktop—any mouse wiggle or window pop-up is visible. Headless VNC instead:
 
-1. **Creates a brand-new, invisible desktop** WinSta0\HVNC in memory.
-2. Runs spawned processes *inside that hidden session*—completely off-screen.
+1. Creates a brand new, invisible desktop WinSta0\HVNC in memory.
+2. Runs spawned processes inside that hidden session completely off-screen.
 3. Streams the pixels or GDI diffs back to the operator with negligible latency.
 4. Leaves the real user blissfully unaware—no taskbar flashes, no window focus steals.
 
@@ -120,11 +120,11 @@ In short: you get a **full UI foothold** with the stealth of a backdoor shell.
 ## OPSEC Highlights
 
 * **Console-per-session** → easy kill-switch & minimal cross-noise.
-* **Auto-persistence** adapts to privilege level (WMI vs. registry).
-* **Keylogger** runs in-process—no DLL drop on disk.
+* **Auto-persistence** adapts to privilege level WMI vs. registry.
+* **Keylogger** runs in-process no DLL drop on disk.
 * **WMI cleanup script** shipped for safe red-team eject.
 
-*(Yes, there’s more on the roadmap: TLS tunneling, clipboard sync, multi-monitor capture—watch the commits!)*
+Yes, theres more on the roadmap: TLS tunneling, clipboard sync, multi-monitor capture watch the commits!
 
 ---
 
