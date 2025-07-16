@@ -75,14 +75,14 @@
 
 Need a sterile host after the demo? Use the included PowerShell helper:
 
-```powershell
-# Remove artifacts, folders, autoruns
+``
+Remove artifacts, folders, autoruns
 client\clean.ps1
 ```
 
 ### Manual WMI Check / Removal
 
-```powershell
+```
 Get-WmiObject -Namespace root\subscription -Class __EventFilter `
   -Filter "Name='Microsoft_Win32Filter'" | ForEach-Object { $_.Delete() }
 
@@ -96,7 +96,7 @@ Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding `
 
 **Verify all gone:**
 
-```powershell
+```
 Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding `
   | Where-Object { $_.Consumer -match 'Microsoft_Win32Consumer' } `
   | Format-List Filter, Consumer
@@ -106,11 +106,11 @@ Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding `
 
 ## Why HVNC?
 
-*Traditional* VNC mirrors the *user’s* active desktop—any mouse wiggle or window pop-up is visible. **Headless VNC** instead:
+*Traditional* VNC mirrors the *user’s* active desktop—any mouse wiggle or window pop-up is visible. Headless VNC instead:
 
-1. **Creates a brand-new, invisible desktop** (WinSta0\HVNC) in memory.
+1. **Creates a brand-new, invisible desktop** WinSta0\HVNC in memory.
 2. Runs spawned processes *inside that hidden session*—completely off-screen.
-3. Streams the pixels (or GDI diffs) back to the operator with negligible latency.
+3. Streams the pixels or GDI diffs back to the operator with negligible latency.
 4. Leaves the real user blissfully unaware—no taskbar flashes, no window focus steals.
 
 In short: you get a **full UI foothold** with the stealth of a backdoor shell.
