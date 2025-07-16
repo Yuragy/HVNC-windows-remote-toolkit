@@ -75,7 +75,7 @@
 
 Need a sterile host after the demo? Use the included PowerShell helper:
 
-``
+```
 Remove artifacts, folders, autoruns
 client\clean.ps1
 ```
