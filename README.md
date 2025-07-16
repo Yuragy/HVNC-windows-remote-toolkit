@@ -94,7 +94,7 @@ Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding `
   | ForEach-Object { $_.Delete() }
 ```
 
-**Verify all gone:**
+Verify all gone:
 
 ```
 Get-WmiObject -Namespace root\subscription -Class __FilterToConsumerBinding `
