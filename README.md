@@ -45,7 +45,7 @@
    ```
    cd server
    python server.py
-   The script will prompt for a **listening port** — use the same port as the client build.
+   The script will prompt for a listening port  use the same port as the client build.
    ```
 
 2. **Client**
