@@ -1,6 +1,6 @@
 # Headless VNC (HVNC) Toolkit
 
-> A **stealth-first** remote-administration framework that spins up an invisible Windows desktop in memory and lets you drive it like a regular VNC session—only without the tell-tale screen flicker or user-side pop-ups.  
+> A stealth first remote-administration framework that spins up an invisible Windows desktop in memory and lets you drive it like a regular VNC session—only without the tell-tale screen flicker or user-side pop-ups.  
 > Built for red-team operators who need *eyes-on-glass* access with the subtlety of a ghost.
 
 ---
@@ -9,10 +9,10 @@
 
 | Path     | Role | Notes |
 |----------|------|-------|
-| **`server/`** | Server-side component | Accepts inbound HVNC tunnels, multiplexes sessions, prints each connection in its own console |
-| **`client/`** | Client implant | Creates the hidden desktop, hooks keyboard / mouse, relays frames & input events |
+| **server/** | Server-side component | Accepts inbound HVNC tunnels, multiplexes sessions, prints each connection in its own console |
+| **client/** | Client implant | Creates the hidden desktop, hooks keyboard / mouse, relays frames & input events |
 
-> ⚠️ *Every new connection opens in a **separate console window***—handy for parallel ops and clean log separation.
+> ⚠️ Every new connection opens in a separate console window handy for parallel ops and clean log separation.
 
 ---
 
@@ -20,19 +20,19 @@
 
 | Constant | Action |
 |----------|--------|
-| `CMD_START_EXPLORER`     | Launch **Windows Explorer** explorer.exe |
-| `CMD_START_RUN`          | Open the classic **Run / cmd prompt** cmd.exe |
-| `CMD_START_CHROME`       | Launch **Google Chrome** |
-| `CMD_START_EDGE`         | Launch **Microsoft Edge** |
-| `CMD_START_BRAVE`        | Launch **Brave** |
-| `CMD_START_FIREFOX`      | Launch **Mozilla Firefox** |
-| `CMD_START_IEXPL`        | Launch **Internet Explorer** |
-| `CMD_START_POWERSHELL`   | Open **PowerShell** |
-| `CMD_SHELL_OPEN`         | Begin an **interactive remote shell** |
+| `CMD_START_EXPLORER`     | Launch Windows Explorer explorer.exe |
+| `CMD_START_RUN`          | Open the classic Run / cmd prompt cmd.exe |
+| `CMD_START_CHROME`       | Launch Google Chrome |
+| `CMD_START_EDGE`         | Launch Microsoft Edge |
+| `CMD_START_BRAVE`        | Launch Brave |
+| `CMD_START_FIREFOX`      | Launch Mozilla Firefox |
+| `CMD_START_IEXPL`        | Launch Internet Explorer |
+| `CMD_START_POWERSHELL`   | Open PowerShell |
+| `CMD_SHELL_OPEN`         | Begin an interactive remote shell |
 | `CMD_SHELL_COMMAND`      | Send a command to a shell already open |
-| `CMD_FILE_LIST`          | Enumerate **files / folders** in a directory |
-| `CMD_FILE_DOWNLOAD`      | **Download** a file from the remote box |
-| `CMD_FILE_UPLOAD`        | **Upload** a file to the remote box |
+| `CMD_FILE_LIST`          | Enumerate files / folders in a directory |
+| `CMD_FILE_DOWNLOAD`      | Download a file from the remote box |
+| `CMD_FILE_UPLOAD`        | Upload a file to the remote box |
 | `CMD_KEYLOGGER_START`    | Start keylogging |
 | `CMD_KEYLOGGER_STOP`     | Stop keylogging |
 
@@ -50,10 +50,10 @@
 
 2. **Client**
 
-   *Edit* `client/main.cpp` – set:
+   Edit client/main.cpp – set:
 
    ```cpp
-   constexpr auto HOST = "YOUR_SERVER_IP";
+   constexpr auto HOST = "SERVER_IP";
    constexpr uint16_t PORT = 4444;  // same as the server prompt
    ```
 
