@@ -1,7 +1,7 @@
 # Headless VNC (HVNC) Toolkit
 
 > A stealth first remote-administration framework that spins up an invisible Windows desktop in memory and lets you drive it like a regular VNC session—only without the tell-tale screen flicker or user-side pop-ups.  
-> Built for red-team operators who need *eyes-on-glass* access with the subtlety of a ghost.
+> Built for red-team operators who need eyes-on-glass access with the subtlety of a ghost.
 
 ---
 
@@ -9,10 +9,10 @@
 
 | Path     | Role | Notes |
 |----------|------|-------|
-| **server/** | Server-side component | Accepts inbound HVNC tunnels, multiplexes sessions, prints each connection in its own console |
-| **client/** | Client implant | Creates the hidden desktop, hooks keyboard / mouse, relays frames & input events |
+| server/ | Server-side component | Accepts inbound HVNC tunnels, multiplexes sessions, prints each connection in its own console |
+| client/ | Client implant | Creates the hidden desktop, hooks keyboard / mouse, relays frames & input events |
 
-> ⚠️ Every new connection opens in a separate console window handy for parallel ops and clean log separation.
+> Every new connection opens in a separate console window handy for parallel ops and clean log separation.
 
 ---
 
@@ -54,7 +54,7 @@
 
    ```cpp
    constexpr auto HOST = "SERVER_IP";
-   constexpr uint16_t PORT = 4444;  // same as the server prompt
+   constexpr uint16_t PORT = 4444;  
    ```
 
    Then compile, ship, and run.
@@ -113,7 +113,7 @@ Traditional VNC mirrors the users active desktop—any mouse wiggle or window po
 3. Streams the pixels or GDI diffs back to the operator with negligible latency.
 4. Leaves the real user blissfully unaware—no taskbar flashes, no window focus steals.
 
-In short: you get a **full UI foothold** with the stealth of a backdoor shell.
+In short: you get a full UI foothold with the stealth of a backdoor shell.
 
 ---
 
@@ -130,7 +130,7 @@ Yes, theres more on the roadmap: TLS tunneling, clipboard sync, multi-monitor ca
 
 ## 🚫 Disclaimer
 
-This repository is provided for **educational purposes only** and intended for **authorized security research**.
-Any **unauthorized use**—including but not limited to illicit surveillance, system compromise, or privacy invasion—is **strictly prohibited**.
+This repository is provided for educational purposes only and intended for authorized security research.
+Any unauthorized use — including but not limited to illicit surveillance, system compromise, or privacy invasion is strictly prohibited.
 
 
